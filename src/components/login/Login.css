@@ -1,0 +1,94 @@
+/* Main container */
+.login-container {
+    position: relative;
+    height: 100vh; /* Full screen */
+    width: 100%;
+}
+
+/* Background styling */
+/* .login-background {
+    position: relative;
+    height: 100%;
+    width: 100%;
+} */
+
+.login-image {
+filter: brightness(50%);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Form container */
+.form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    height: 350px;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Similar to Tailwind's shadow-md */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.form-header {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem; /* Tailwind's text-2xl */
+    font-weight: 600;
+    color: #1e293b; /* Tailwind's slate-800 */
+    border-bottom: 1px solid #64748b; /* Tailwind's slate-500 */
+}
+
+/* Form */
+.login-form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+.input-field {
+    width: 90%;
+    outline: none;
+    border: 1px solid #94a3b8; /* Tailwind's slate-400 */
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.input-field:focus {
+    border-color: #334155; /* Tailwind's slate-600 */
+}
+
+/* Submit button */
+.submit-button {
+    width: 75%;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem; /* Tailwind's text-xl */
+    color: white;
+    background-color: #3b82f6; /* Tailwind's blue-500 */
+    transition: background-color 0.2s;
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: #2563eb; /* Tailwind's blue-600 */
+}
+
+.submit-button.disabled {
+    cursor: not-allowed;
+    background-color: #9ca3af; /* Tailwind's gray-400 */
+}

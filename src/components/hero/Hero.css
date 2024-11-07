@@ -1,0 +1,45 @@
+/* Hero component container */
+.hero {
+    position: relative;
+    height: 100vh; /* Full-screen height */
+    width: 100%;
+  }
+  
+  /* Background image styling */
+  .hero-image {
+    filter: brightness(50%);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  /* Overlay content container */
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Tailwind's gap-8 */
+  }
+  
+  /* Main header text */
+  .hero-main-header {
+    color: white;
+    font-size: 3.75rem; /* Tailwind's text-6xl */
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Secondary header text */
+  .hero-secondary-header {
+    color: white;
+    font-size: 2.25rem; /* Tailwind's text-4xl */
+    font-weight: 600;
+    text-align: center;
+  }
+  
