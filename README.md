@@ -11,3 +11,13 @@ Add all new files git add --all
 Remove a file. git rm <filename>
 Commit changes. git commit -m '<commit_message>'
 Get an idea of the git command to use next. git status
+
+BACKEND OHJEET:
+1 - Tee oma .env tiedosto johon tulee DBUSER ja DBKEY. (.env tiedosto tehdään backend kansioon)
+    DBUSER on käyttäjäsi nimi MongoDB tietokannassa.
+    DBKEY on käyttäjäsi salasana jonka saa generoitua ja kopioitua kun luot omaa käyttäjääsi tietokantaan.
+    Esimerkki .env:
+        DBUSER="nimi"
+        DBKEY="salasana"
+
+2 - Käynnistä backend serveri komennolla: node --env-file=.env .\server.js
