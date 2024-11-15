@@ -5,15 +5,9 @@ const readline = require('readline/promises').createInterface({
     output: process.stdout
 });
 
-const { Schema } = mongoose;
-
-// TODO: Jossain vaiheessa pitää siirtää nämä omiin tiedostoihin, kun tulee hotellit ja muut
-const personSchema = new Schema({
-    name: String,
-    password: String
-});
-
-const Person = mongoose.model('Person', personSchema);
+const Users = require('./models/userModel');
+const Bookings = require('./models/bookingsModel');
+const Hotels = require('./models/hotelModel');
 
 // Tee oma .env tiedosto jossa on DBUSER ja DBKEY
 const uri = "mongodb+srv://" + process.env.DBUSER + ":" + process.env.DBKEY + "@cluster0.alvyo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -26,11 +20,12 @@ async function connectDB() {
 }
 
 async function getUser(username) {
-    return await Person.findOne({name: username});
+    return await Users.findOne({username: username});
 };
 
 async function addUser() {
     var username = '';
+    var email = '';
     var password = '';
 
     while (true) {
@@ -44,18 +39,26 @@ async function addUser() {
     }
 
     while (true) {
-        password = await readline.question('Give new password for ' + username + ': ');
-        if (password === '') {
-            console.log('Password can not be null, try again...');
+        email = await readline.question('Give new email: ');
+        if (email === '') {
+            console.log('Email can\'t be null, try again...');
             continue;
         } else {
             break;
         }
     }
 
-    const hashedPass = await bcrypt.hash(password, 10);
+    while (true) {
+        password = await readline.question('Give new password for ' + username + ': ');
+        if (password === '') {
+            console.log('Password can\'t be null, try again...');
+            continue;
+        } else {
+            break;
+        }
+    }
 
-    await Person.create({name: username, password: hashedPass});
+    await Users.create({username: username, email: email, password: password});
 }
 
 async function signInUser() {
@@ -83,11 +86,11 @@ async function signInUser() {
 }
 
 async function getAllUsers() {
-    return await Person.find({});
+    return await Users.find({});
 }
 
 async function deleteAllUsers() {
-    await Person.deleteMany({});
+    await Users.deleteMany({});
 }
 
 async function run() {
