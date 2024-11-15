@@ -4,6 +4,7 @@ import Delhi from '../../../public/assets/delhi.jpg';
 import Berlin from '../../../public/assets/berlin.jpg';
 import Paris from '../../../public/assets/paris.jpg';
 import Dubai from '../../../public/assets/Dubai.jpg';
+import Catalog from '../../pages/catalog/Catalog';
 
 const PopularLocation = () => {
   const data = [
@@ -37,7 +38,7 @@ const PopularLocation = () => {
         <div className="popular-location-grid">
           {data.map((place, index) => (
             <div key={index} className="card">
-              <a href="/catalog" className="card-link">
+              <a href='/Catalog' className="card-link">
                 <div className="card-image-container">
                   <img 
                     alt="photo" 
