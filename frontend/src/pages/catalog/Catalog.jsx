@@ -2,13 +2,14 @@
 
 import React from 'react'
 
-import image from '../../../public/assets/hr_1.jpg'
 import Select from '../../ui/Select'
-import Input from '../../ui/Input'
 import Button from '../../ui/Button'
+import Input from '../../ui/Input'
+
 import Card from '../../components/bestHotels/Card'
 
 
+import image from '../../../public/assets/hr_1.jpg'
 import image_1 from '../../../public/assets/hr_1.jpg'
 import image_2 from '../../../public/assets/hr_2.jpg'
 import image_3 from '../../../public/assets/hr_3.jpg'
