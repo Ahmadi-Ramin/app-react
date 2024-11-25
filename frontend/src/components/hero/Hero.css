@@ -1,45 +1,164 @@
-/* Hero component container */
+/* Hero component container .hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.hero-image {
+  filter: brightness(50%);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-main-header {
+  color: white;
+  font-size: 3.75rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.hero-secondary-header {
+  color: white;
+  font-size: 2.25rem;
+  font-weight: 600;
+  text-align: center;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+root {
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  /* overflow-y: hidden;  */
+  width: 100%;
+  height: 100%;
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+header {
+  position: sticky !important;
+  /* position: relative; */
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  position: fixed; /* Change to fixed */
+  top: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent */
+  color: white;
+  width: 100%;
+  z-index: 1000; /* Ensure it stays above other content */
+  transition: background-color 0.3s;
+}
+
+.navbar:hover {
+  background-color: rgba(63, 59, 59, 0.8); /* Darker on hover */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links {
+  width: 50px;
+  list-style: none;
+  display: flex;
+}
+
+.nav-links {
+  margin-left: 1.5rem;
+}
+
+.nav-links {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f39c12;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh; /* Full viewport height */
+  /* background: url('./seabird.mp4') no-repeat center center/cover; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: -1;
+  top: -50px;
+}
+.background-video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  object-fit: cover;
+
+  margin-bottom: -100px;
+}
+
 .hero {
-    position: relative;
-    height: 100vh; /* Full-screen height */
-    width: 100%;
-  }
-  
-  /* Background image styling */
-  .hero-image {
-    filter: brightness(50%);
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  
-  /* Overlay content container */
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px; /* Tailwind's gap-8 */
-  }
-  
-  /* Main header text */
-  .hero-main-header {
-    color: white;
-    font-size: 3.75rem; /* Tailwind's text-6xl */
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  /* Secondary header text */
-  .hero-secondary-header {
-    color: white;
-    font-size: 2.25rem; /* Tailwind's text-4xl */
-    font-weight: 600;
-    text-align: center;
-  }
-  
+  position: absolute;
+  bottom: 150px;
+  z-index: 3;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  text-align: center;
+}
+.hero-content {
+  position: absolute;
+  margin-top: 500px;
+  color: rgb(6, 6, 0);
+  width: auto;
+  height: 30px;
+  background-color: white;
+}
