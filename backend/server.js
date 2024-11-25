@@ -19,109 +19,86 @@ async function connectDB() {
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
 }
 
-async function getUser(username) {
-    return await Users.findOne({username: username});
-};
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 5000;
 
-async function addUser() {
-    var username = '';
-    var email = '';
-    var password = '';
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-    while (true) {
-        username = await readline.question('Give new username: ');
-        if (await getUser(username) !== null || username === '') {
-            console.log('User with the same name already exists or username is null, try again...');
-            continue;
-        } else {
-            break;
-        }
-    }
-
-    while (true) {
-        email = await readline.question('Give new email: ');
-        if (email === '') {
-            console.log('Email can\'t be null, try again...');
-            continue;
-        } else {
-            break;
-        }
-    }
-
-    while (true) {
-        password = await readline.question('Give new password for ' + username + ': ');
-        if (password === '') {
-            console.log('Password can\'t be null, try again...');
-            continue;
-        } else {
-            break;
-        }
-    }
-
-    await Users.create({username: username, email: email, password: password});
-}
-
-async function signInUser() {
-    while (true) {
-        const username = await readline.question('Give username: ');
-        const user = await getUser(username);
-
-        if (user === null) {
-            console.log('User does not exist, try again...');
-            continue;
-        } else {
-            while (true) {
-                const password = await readline.question('Give password: ');
-                if (bcrypt.compareSync(password, user.password) === true) {
-                    console.log('Correct password!');
-                    break;
-                } else {
-                    console.log('Incorrect password...');
-                    continue;
-                }
-            }
-            break;
-        }
-    }
-}
-
-async function getAllUsers() {
-    return await Users.find({});
-}
-
-async function deleteAllUsers() {
-    await Users.deleteMany({});
-}
-
-async function run() {
+app.get('/api/getAllUsers', async (req, res) => {
     await connectDB();
-
-    while (true) {
-        const choice = await readline.question('Add user (0), sign in (1), delete all (2), list all (3), exit (4): ');
-        if (choice === '0') {
-            addUser();
-            continue;
-        } else if (choice === '1') {
-            signInUser();
-            continue;
-        } else if (choice === '2') {
-            deleteAllUsers();
-            continue;
-        } else if (choice === '3') {
-            const allUsers = await getAllUsers();
-            console.log(allUsers);
-            continue;
-        } else if (choice === '4') {
-            console.log('Exiting...');
-            break;
-        } else {
-            console.log('Try again...');
-            continue;
-        }
+    try {
+        const users = await Users.find({});
+        res.json(users);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Server Error");
     }
-
-    // Ensures that the client will close when you finish/error
     await mongoose.disconnect();
-}
+});
 
-run().catch(console.dir);
+app.get('/api/getUser::name', async (req, res) => {
+    const name = req.params.name;
+    
+    await connectDB();
+    try {
+        const user = await Users.findOne({username: name});
+        res.json(user);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Server Error");
+    }
+    await mongoose.disconnect();
+});
+
+app.get('/api/getAllHotels', async (req, res) => {
+    await connectDB();
+    try {
+        const hotels = await Hotels.find({});
+        res.json(hotels);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Server Error");
+    }
+    await mongoose.disconnect();
+});
+
+app.get('/api/getHotel::city', async (req, res) => {
+    const city = req.params.city;
+    
+    await connectDB();
+    try {
+        const hotel = await Hotels.findOne({city: city});
+        res.json(hotel);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Server Error");
+    }
+    await mongoose.disconnect();
+});
+
+app.get('/api/getAllBookings', async (req, res) => {
+    await connectDB();
+    try {
+        const bookings = await Bookings.find({});
+        res.json(bookings);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Server Error");
+    }
+    await mongoose.disconnect();
+});
+
+app.get('/api/getBooking::address', async (req, res) => {
+    const address = req.params.address;
+    
+    await connectDB();
+    try {
+        const booking = await Bookings.findOne({address: address});
+        res.json(booking);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Server Error");
+    }
+    await mongoose.disconnect();
+});
