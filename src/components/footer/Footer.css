@@ -43,5 +43,19 @@ a  {
 
 }
 
+@media (max-width: 768px) {
+    
+    .footer {
+        text-align: left;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .linkit{
+        padding: 0;
+    }
+  
+}
+
 
 
