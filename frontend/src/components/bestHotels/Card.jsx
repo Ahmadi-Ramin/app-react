@@ -2,6 +2,8 @@ import { format } from 'currency-formatter'
 
 
 import React from 'react'
+import RatingStar from '../RatingStar.jsx'
+
 // import { AiFillStar } from 'react-icons/ai'
 
 
@@ -34,8 +36,10 @@ const Card = ({ place }) => {
                         color='white'
                     /> */}
                     <span className="text-white">
-                        {place.reviews}
+                        <RatingStar rating={place.reviews}/>
+                       
                     </span>
+                    
                 </span>
             </div>
             {/* price & reviews */}
@@ -51,6 +55,7 @@ const Card = ({ place }) => {
                 </button>
             </div>
         </div>
+        
     </a>
   )
 }

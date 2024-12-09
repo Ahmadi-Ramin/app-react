@@ -17,7 +17,7 @@ const BestHotels = () => {
       image: image_1,
       price: 324.50,
       category: "Luxury",
-      reviews: 4.7,
+      reviews: 3,
       location: "Dubai, UAE"
     },
     {
@@ -25,7 +25,7 @@ const BestHotels = () => {
       image: image_2,
       price: 324.50,
       category: "Luxury",
-      reviews: 4.7,
+      reviews: 3,
       location: "Dubai, UAE"
     },
     {
@@ -33,7 +33,7 @@ const BestHotels = () => {
       image: image_3,
       price: 324.50,
       category: "Luxury",
-      reviews: 4.7,
+      reviews: 4,
       location: "Dubai, UAE"
     },
     {
