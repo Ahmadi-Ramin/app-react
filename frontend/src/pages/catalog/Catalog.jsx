@@ -7,7 +7,7 @@ import Button from '../../ui/Button'
 import Input from '../../ui/Input'
 
 import Card from '../../components/bestHotels/Card'
-
+import Navbar from '../../components/navbar/Navbar'
 
 import image from '../../../public/assets/hr_1.jpg'
 import image_1 from '../../../public/assets/hr_1.jpg'
@@ -80,6 +80,7 @@ const Catalog = () => {
 
   return (
     <div className='min-h-screen w-full'>
+      <Navbar/>
       <div className="relative h-3/5 w-full">
         <img
           alt='Dubai'
