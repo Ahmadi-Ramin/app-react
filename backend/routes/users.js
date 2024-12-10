@@ -8,8 +8,8 @@ userRouter.get('/getOne', async (req, res) => {
     
     await connectDB();
     try {
-        const booking = await Users.findOne({username: input.username, email: input.email, password: input.password, isAdmin: input.isAdmin});
-        res.json(booking);
+        const data = await Users.findOne({username: input.username, email: input.email, password: input.password, isAdmin: input.isAdmin});
+        res.json(data);
     } catch (error) {
         console.error(error);
         res.status(500).send("Server Error");
@@ -22,8 +22,8 @@ userRouter.get('/getMany', async (req, res) => {
     
     await connectDB();
     try {
-        const booking = await Users.find({username: input.username, email: input.email, password: input.password, isAdmin: input.isAdmin});
-        res.json(booking);
+        const data = await Users.find({username: input.username, email: input.email, password: input.password, isAdmin: input.isAdmin});
+        res.json(data);
     } catch (error) {
         console.error(error);
         res.status(500).send("Server Error");

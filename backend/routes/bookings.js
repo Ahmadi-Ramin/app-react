@@ -8,8 +8,8 @@ bookingRouter.get('/getOne', async (req, res) => {
     
     await connectDB();
     try {
-        const booking = await Bookings.findOne({address: input.address, startDate: input.startDate, endDate: input.endDate});
-        res.json(booking);
+        const data = await Bookings.findOne({address: input.address, startDate: input.startDate, endDate: input.endDate});
+        res.json(data);
     } catch (error) {
         console.error(error);
         res.status(500).send("Server Error");
@@ -22,8 +22,8 @@ bookingRouter.get('/getMany', async (req, res) => {
     
     await connectDB();
     try {
-        const booking = await Bookings.find({address: input.address, startDate: input.startDate, endDate: input.endDate});
-        res.json(booking);
+        const data = await Bookings.find({address: input.address, startDate: input.startDate, endDate: input.endDate});
+        res.json(data);
     } catch (error) {
         console.error(error);
         res.status(500).send("Server Error");

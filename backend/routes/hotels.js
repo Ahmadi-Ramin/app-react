@@ -8,8 +8,8 @@ hotelRouter.get('/getOne', async (req, res) => {
     
     await connectDB();
     try {
-        const booking = await Hotels.findOne({address: input.address, city: input.city, price: input.price, contact: input.contact, rating: input.rating});
-        res.json(booking);
+        const data = await Hotels.findOne({address: input.address, city: input.city, price: input.price, contact: input.contact, rating: input.rating});
+        res.json(data);
     } catch (error) {
         console.error(error);
         res.status(500).send("Server Error");
@@ -22,8 +22,8 @@ hotelRouter.get('/getMany', async (req, res) => {
     
     await connectDB();
     try {
-        const booking = await Hotels.find({address: input.address, city: input.city, price: input.price, contact: input.contact, rating: input.rating});
-        res.json(booking);
+        const data = await Hotels.find({address: input.address, city: input.city, price: input.price, contact: input.contact, rating: input.rating});
+        res.json(data);
     } catch (error) {
         console.error(error);
         res.status(500).send("Server Error");
