@@ -1,0 +1,19 @@
+API DOKUMENTAATIO
+
+GET
+    /api/users/getOne       - palauttaa yhden käyttäjän joka vastaa annettuja tietoja*
+    /api/hotels/getOne      - palauttaa yhden hotellin joka vastaa annettuja tietoja*
+    /api/bookings/getOne    - palauttaa yhden varauksen joka vastaa annettuja tietoja*
+
+    /api/users/getMany      - palauttaa yhden tai useamman käyttäjän annetuilla tiedoilla*
+    /api/hotels/getMany     - palauttaa yhden tai useamman hotellin annetuilla tiedoilla*
+    /api/bookings/getMany   - palauttaa yhden tai useamman varauksen annetuilla tiedoilla*
+
+POST
+    /api/users/post         - luo uuden käyttäjän annetuilla tiedoilla
+    /api/hotels/post        - luo uuden hotellin annetuilla tiedoilla
+    /api/bookings/post      - luo uuden varauksen annetuilla tiedoilla
+
+    /api/users/login        - palauttaa tokenin jos sisäänkirjautuminen onnistuu, muuten palauttaa virheen
+
+*tällä hetkellä kaikki arvot pitää antaa, muuten tietokannasta ei palauteta mitään
