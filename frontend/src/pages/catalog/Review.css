@@ -1,0 +1,91 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color:#eaedf0;
+    
+  }
+  
+  .ratingScreen {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #accdf2;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .ratingScreens{
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #81a7d2;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  h3.review,
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  textarea.reviewtext,
+  input.nameInput {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  textarea.reviewtext {
+    min-height: 100px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Star styles */
+  label {
+    transition: color 0.3s ease;
+    font-weight: bold;
+  }
+  
+  /* Reviews list */
+  ul.ulclass {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul.ulclass li.liclass {
+    background: #f0f0f0;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  ul.ulclass li.liclass h4 {
+    margin: 0;
+    color: #333;
+  }
+  
+  ul.ulclass li.liclass small {
+    color: #777;
+  }
+  
+  ul.ulclass li.liclass p {
+    margin: 5px 0;
+    color: #555;
+  }
+  

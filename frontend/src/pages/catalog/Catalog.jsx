@@ -7,7 +7,7 @@ import Button from '../../ui/Button'
 import Input from '../../ui/Input'
 
 import Card from '../../components/bestHotels/Card'
-
+import Navbar from '../../components/navbar/Navbar'
 
 import image from '../../../public/assets/hr_1.jpg'
 import image_1 from '../../../public/assets/hr_1.jpg'
@@ -25,7 +25,7 @@ const Catalog = () => {
       image: image_1,
       price: 324.50,
       category: "Luxury",
-      reviews: 4.7,
+      reviews: 3.8,
       location: "Dubai, UAE"
     },
     {
@@ -33,7 +33,7 @@ const Catalog = () => {
       image: image_2,
       price: 324.50,
       category: "Luxury",
-      reviews: 4.7,
+      reviews: 3.5,
       location: "Dubai, UAE"
     },
     {
@@ -41,7 +41,7 @@ const Catalog = () => {
       image: image_3,
       price: 324.50,
       category: "Luxury",
-      reviews: 4.7,
+      reviews: 3.9,
       location: "Dubai, UAE"
     },
     {
@@ -49,7 +49,7 @@ const Catalog = () => {
       image: image_4,
       price: 324.50,
       category: "Luxury",
-      reviews: 4.7,
+      reviews: 4.8,
       location: "Dubai, UAE"
     },
     {
@@ -57,7 +57,7 @@ const Catalog = () => {
       image: image_5,
       price: 324.50,
       category: "Luxury",
-      reviews: 4.7,
+      reviews: 4.4,
       location: "Dubai, UAE"
     },
     {
@@ -73,13 +73,14 @@ const Catalog = () => {
       image: image_7,
       price: 324.50,
       category: "Luxury",
-      reviews: 4.7,
+      reviews: 4.2,
       location: "Dubai, UAE"
     },
   ]
 
   return (
     <div className='min-h-screen w-full'>
+      <Navbar/>
       <div className="relative h-3/5 w-full">
         <img
           alt='Dubai'
