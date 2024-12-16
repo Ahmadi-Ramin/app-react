@@ -9,8 +9,7 @@ import RatingStar from '../RatingStar.jsx'
 
 const Card = ({ place }) => {
   return (
-    <a  
-      href="/details/1" 
+   <div
       className="h-[500px] w-[350px] flex flex-wrap rounded-xl cursor-pointer transition-all shadow-md hover:shadow-lg"
     >
         
@@ -36,7 +35,8 @@ const Card = ({ place }) => {
                         color='white'
                     /> */}
                     <span className="text-white">
-                        <RatingStar rating={place.reviews}/>
+                      
+                        <RatingStar place={place}/>
                        
                     </span>
                     
@@ -50,13 +50,15 @@ const Card = ({ place }) => {
                         per night
                     </span>
                 </span>
+                <a  href="/details/1" >
+      
                 <button className="cursor-pointer py-2 px-6 text-white bg-blue-500">
                     Book
-                </button>
+                </button></a>
             </div>
         </div>
         
-    </a>
+    </div>
   )
 }
 

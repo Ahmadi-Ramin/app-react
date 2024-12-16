@@ -1,13 +1,16 @@
 import React from 'react'
 
 import { useNavigate } from 'react-router-dom';
-import Review from '../pages/catalog/Review'
+// import Review from '../pages/catalog/Review'
 
-function RatingStar({ rating }) {
+// function RatingStar({ rating }) {
+  
+  function RatingStar({place}) {
+  const rating=place.reviews
   const navigate = useNavigate();
   const starStyle = { color: 'yellow', fontSize: 15 }; // Common style for all stars
   const handleStarClick = () => {
-    navigate('/details/:id'); // Replace '/add-review' with your desired review page route
+    navigate('/review', { state: { location: place.location } }); 
   };
   return (
     <div className="rating">
